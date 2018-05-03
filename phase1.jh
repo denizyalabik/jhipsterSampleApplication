@@ -1,0 +1,25 @@
+entity QuestionAnswer {
+    question String required,
+  	correctAnswer String required,
+    wrongAnswers String required
+}
+
+entity Usersdemo{
+	Name String,
+    Surname String,
+	UserName String,
+  	email String,
+    password String,
+    uRole Role 
+}
+
+enum Role{
+	ADMIN , TEACHER , STUDENT
+}
+
+relationship OneToMany {
+	Usersdemo{qanswer} to QuestionAnswer{user}
+}
+
+paginate QuestionAnswer, Usersdemo with pagination
+service Usersdemo with serviceClass
