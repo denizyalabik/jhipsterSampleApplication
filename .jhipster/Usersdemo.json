@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "qanswer",
+            "otherEntityName": "questionAnswer",
+            "otherEntityRelationshipName": "user"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uRole",
+            "fieldType": "Role",
+            "fieldValues": "ADMIN,TEACHER,STUDENT"
+        }
+    ],
+    "changelogDate": "20180503202117",
+    "entityTableName": "usersdemo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}
