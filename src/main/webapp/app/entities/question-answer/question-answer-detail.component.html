@@ -1,0 +1,56 @@
+
+<div *ngIf="questionAnswer">
+    <h2><span>Question Answer</span> {{questionAnswer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Question Title</span></dt>
+        <dd>
+            <span>{{questionAnswer.questionTitle}}</span>
+        </dd>
+        <dt><span>Question</span></dt>
+        <dd>
+            <span>{{questionAnswer.question}}</span>
+        </dd>
+        <dt><span>Correct Answer</span></dt>
+        <dd>
+            <span>{{questionAnswer.correctAnswer}}</span>
+        </dd>
+        <dt><span>Wrong Answers</span></dt>
+        <dd>
+            <span>{{questionAnswer.wrongAnswers}}</span>
+        </dd>
+        <dt><span>Catagory</span></dt>
+        <dd>
+            <span>{{questionAnswer.catagory}}</span>
+        </dd>
+        <dt><span>Subject</span></dt>
+        <dd>
+            <span>{{questionAnswer.subject}}</span>
+        </dd>
+        <dt><span>Level</span></dt>
+        <dd>
+            <span>{{questionAnswer.level}}</span>
+        </dd>
+        <dt><span>Acauser</span></dt>
+        <dd>
+            <div *ngIf="questionAnswer.acauser">
+                <a [routerLink]="['/academia-users', questionAnswer.acauser?.id]">{{questionAnswer.acauser?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'question-answer/'+ questionAnswer.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,48 @@
+
+<div *ngIf="testAc">
+    <h2><span>Test Ac</span> {{testAc.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Created Time</span></dt>
+        <dd>
+            <span>{{testAc.createdTime | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Test Name</span></dt>
+        <dd>
+            <span>{{testAc.testName}}</span>
+        </dd>
+        <dt><span>Has</span></dt>
+        <dd>
+            <span *ngFor="let has of testAc.have; let last = last">
+                <a [routerLink]="['/question-answer', has?.id ]">{{has.questionTitle}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span>Acauser</span></dt>
+        <dd>
+            <div *ngIf="testAc.acauser">
+                <a [routerLink]="['/academia-users', testAc.acauser?.id]">{{testAc.acauser?.name}}</a>
+            </div>
+        </dd>
+        <dt><span>Acauser</span></dt>
+        <dd>
+            <div *ngIf="testAc.acauser">
+                <a [routerLink]="['/academia-users', testAc.acauser?.id]">{{testAc.acauser?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'test-ac/'+ testAc.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
