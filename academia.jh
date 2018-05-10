@@ -1,0 +1,61 @@
+entity QuestionAnswer {
+	questionTitle String required,
+    question String required,
+  	correctAnswer String required,
+    wrongAnswers String required,
+    catagory Category,
+    subject Subject,
+    level Level
+}
+
+entity AcademiaUsers{
+	Name String,
+    Surname String,
+	UserName String,
+  	email String,
+    password String,
+    uRole Role 
+}
+
+entity History {
+	solvedDate LocalDate,
+    givenAnswer String
+}
+
+
+entity TestAc {
+	createdTime LocalDate,
+    TestName String
+}
+
+enum Role{
+	ADMIN , TEACHER , STUDENT
+}
+
+enum Level{
+	EASY, NORMAL, HARD
+}
+
+enum Subject{
+	ASD, ERED
+}
+
+enum Category{
+	NONE, MATH , PHYSICS, CHEMISTRY
+}
+
+relationship ManyToMany{
+ 
+ TestAc{has(questionTitle)} to QuestionAnswer{ques(TestName)}
+}
+
+relationship OneToMany {
+	AcademiaUsers{creates(question)} to QuestionAnswer{acauser(Name)}
+    QuestionAnswer{solved} to History{}
+    AcademiaUsers{creates(TestName)} to TestAc{acauser(Name)}
+    AcademiaUsers{solve(TestName)} to TestAc{acauser(Name)}
+    AcademiaUsers{has} to History{}
+}
+
+paginate QuestionAnswer, AcademiaUsers, History, TestAc with pagination
+service QuestionAnswer, AcademiaUsers, History, TestAc with serviceClass

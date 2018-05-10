@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "questionAnswer",
+            "otherEntityName": "questionAnswer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "academiaUsers",
+            "otherEntityName": "academiaUsers",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "solvedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "givenAnswer",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180510193749",
+    "entityTableName": "history",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

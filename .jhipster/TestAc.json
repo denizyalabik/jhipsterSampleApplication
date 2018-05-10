@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "ques",
+            "relationshipName": "has",
+            "otherEntityName": "questionAnswer",
+            "otherEntityField": "questionTitle",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "acauser",
+            "otherEntityName": "academiaUsers",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "acauser",
+            "otherEntityName": "academiaUsers",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "createdTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "testName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180510193750",
+    "entityTableName": "test_ac",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}
