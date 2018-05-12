@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "solved",
+            "otherEntityName": "history",
+            "otherEntityRelationshipName": "questionAnswer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "acauser",
+            "otherEntityName": "academiaUsers",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "ques",
+            "otherEntityName": "testAc",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "has"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "questionTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "question",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "correctAnswer",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "wrongAnswers",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "catagory",
+            "fieldType": "Category",
+            "fieldValues": "NONE,MATH,PHYSICS,CHEMISTRY"
+        },
+        {
+            "fieldName": "subject",
+            "fieldType": "Subject",
+            "fieldValues": "ASD,ERED"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Level",
+            "fieldValues": "EASY,NORMAL,HARD"
+        }
+    ],
+    "changelogDate": "20180512074848",
+    "entityTableName": "question_answer",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

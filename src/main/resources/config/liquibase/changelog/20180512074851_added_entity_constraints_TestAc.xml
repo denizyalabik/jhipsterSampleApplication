@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestAc.
+    -->
+    <changeSet id="20180512074851-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_acs_id"
+                                 baseTableName="test_ac_has"
+                                 constraintName="fk_test_ac_has_test_acs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_ac"/>
+        <addForeignKeyConstraint baseColumnNames="have_id"
+                                 baseTableName="test_ac_has"
+                                 constraintName="fk_test_ac_has_have_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="question_answer"/>
+        
+        <addForeignKeyConstraint baseColumnNames="acauser_id"
+                                 baseTableName="test_ac"
+                                 constraintName="fk_test_ac_acauser_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="academia_users"/>
+
+        <addForeignKeyConstraint baseColumnNames="acauser_id"
+                                 baseTableName="test_ac"
+                                 constraintName="fk_test_ac_acauser_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="academia_users"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -43,6 +43,16 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.QuestionAnswer.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.QuestionAnswer.class.getName() + ".solveds", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.QuestionAnswer.class.getName() + ".ques", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AcademiaUsers.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AcademiaUsers.class.getName() + ".creates", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AcademiaUsers.class.getName() + ".solves", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AcademiaUsers.class.getName() + ".have", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.History.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.TestAc.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.TestAc.class.getName() + ".have", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
