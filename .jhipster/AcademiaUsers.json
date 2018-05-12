@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "creates",
+            "otherEntityName": "questionAnswer",
+            "otherEntityRelationshipName": "acauser"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "creates",
+            "otherEntityName": "testAc",
+            "otherEntityRelationshipName": "acauser"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "solve",
+            "otherEntityName": "testAc",
+            "otherEntityRelationshipName": "acauser"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "has",
+            "otherEntityName": "history",
+            "otherEntityRelationshipName": "academiaUsers"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uRole",
+            "fieldType": "Role",
+            "fieldValues": "ADMIN,TEACHER,STUDENT"
+        }
+    ],
+    "changelogDate": "20180512074849",
+    "entityTableName": "academia_users",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}
